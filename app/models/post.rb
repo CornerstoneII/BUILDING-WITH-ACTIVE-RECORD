@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
-    validates :title, :body, :author_id, presence: true
+    validates :title, :body, presence: true
     validates :title, uniqueness: true
+
+    belongs_to :user
+    has_many :comments
 end
